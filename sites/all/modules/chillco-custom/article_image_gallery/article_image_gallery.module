@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Article Image Gallery feature.
+ */
+
+include_once 'article_image_gallery.features.inc';
