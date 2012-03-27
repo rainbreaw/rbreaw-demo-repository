@@ -22,7 +22,7 @@ function article_image_gallery_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Article Image Gallery Feature';
+  $handler->display->display_options['title'] = 'Article Image Gallery';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -116,7 +116,7 @@ function article_image_gallery_views_default_views() {
   $handler->display->display_options['fields']['field_image']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'medium',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_image']['field_api_classes'] = 0;
@@ -135,6 +135,8 @@ function article_image_gallery_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
